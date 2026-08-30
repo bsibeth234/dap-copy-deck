@@ -1,0 +1,12 @@
+node_modules
+.vercel
+.nitro
+.output
+.tanstack
+dist
+*.log
+.env
+.env.*
+artifacts
+.grok
+server/virtual-grok-og-identity.d.ts
