@@ -62,9 +62,9 @@ export function GateViz() {
       </text>
       <line x1="16" y1="40" x2="404" y2="40" stroke="var(--color-rule)" />
       {[
-        { n: "ACME", w: 0.78, y: 58 },
+        { n: "ACME", w: 0.775, y: 58 },
         { n: "NORD", w: 0.6, y: 92 },
-        { n: "HELM", w: 1.12, y: 126, halt: true },
+        { n: "HELM", w: 0.45, y: 126 },
       ].map((row) => (
         <g key={row.n}>
           <text x="16" y={row.y + 11} fill="var(--color-ink-soft)" fontSize="11" fontFamily="var(--font-mono)">
@@ -72,15 +72,15 @@ export function GateViz() {
           </text>
           <rect x="80" y={row.y} width="260" height="14" fill="var(--color-paper-sunk)" />
           <rect
-            className={row.halt ? "bar halt" : "bar"}
+            className="bar"
             x="80"
             y={row.y}
             width={260 * Math.min(row.w, 1)}
             height="14"
-            fill={row.halt ? "var(--color-signal)" : "var(--color-ink)"}
+            fill="var(--color-ink)"
           />
-          <text x="352" y={row.y + 11} fill={row.halt ? "var(--color-signal)" : "var(--color-muted)"} fontSize="10" fontFamily="var(--font-mono)">
-            {row.halt ? "HALT" : `${(row.w * 4).toFixed(1)}%`}
+          <text x="352" y={row.y + 11} fill="var(--color-muted)" fontSize="10" fontFamily="var(--font-mono)">
+            {(row.w * 4).toFixed(1)}%
           </text>
         </g>
       ))}
