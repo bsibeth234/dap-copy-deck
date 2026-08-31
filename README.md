@@ -2,12 +2,14 @@
 
 Visual mock of dap.solutions. Not production. Graphite, cream, vermilion. Click to expand. Film in the hero.
 
+Public mention on Home: Overture, Resolve Exchange, sh4pe, DAP Standard. Services: Readiness assessment, Embedded Context Architect. Bellwether is Try plus a Home proof line. Do not print CONFIRM. `/deck` is unlinked.
+
 ## What to review
 
-1. Home. Tagline only. Product lineup. Offers accordion.
-2. How. Four chapters, then the compiler.
+1. Home. Tagline, locked category, Bellwether proof. Four-product lineup. Two offer tiles.
+2. How. One board film, compile and gate stills, then the compiler.
 3. Papers. Titles. Click for the line and the file.
-4. About. Who we are, What we do, Why it exists, About the founder.
+4. About. He sold the stack you already run.
 
 Nav: Products, How, Papers, About. Right: Try, Build.
 

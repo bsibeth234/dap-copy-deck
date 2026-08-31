@@ -1,6 +1,6 @@
 # DAP site rewrite. Handoff for Grok.
 
-Private mock of [dap.solutions](https://dap.solutions). Not production. Do not push this onto `dap-solutions-site` without an explicit founder ask.
+Private mock of [dap.solutions](https://dap.solutions). Do not push this onto `dap-solutions-site` without an explicit founder ask.
 
 Repo: https://github.com/bsibeth234/dap-copy-deck
 
@@ -19,36 +19,31 @@ Buyer: CIO, CCO, Head of Risk, GC, COO. Eight seconds. No jargon.
 - Bellwether: https://bellwether.dap.solutions
 - Buyer seats: CIO, CCO, Head of Risk, General Counsel, COO
 - Doctrine: Models propose. Humans ratify.
+- Attested: Only deterministic evaluation over ratified inputs may be attested.
 - Canadian spelling. No em dashes. No en dashes.
 
 ## Nav
 
 Products · How · Papers · About. Right: Try · Build.
 
-Old numbered tour is gone. `/living-policy` and `/embedded-architect` redirect to How. `/built` redirects to Products.
+Old numbered tour is gone. `/embedded-architect` redirects to `/#offers`. `/living-policy` redirects to How. `/built` redirects to Products.
 
 ## Pages
 
-- `/` film, tagline, one line, product lineup, two offers on click
-- `/how-it-works` four chapters then the compiler demo
-- `/documents` paper titles, click for the line and the file
-- `/about` one sentence, record on click
-- `/deck` the copy deck (internal). Keep it in the footer only.
+- `/` film, tagline, locked category, Bellwether proof, four-product lineup, two offer tiles
+- `/how-it-works` chapters, one board film, compiler demo, Limitations
+- `/documents` paper titles
+- `/about` sold-the-stack first screen, accordion
+- `/deck` internal copy deck. Unlinked. URL only. Not in footer or nav.
 
-## Product line
+## Product mention (public lineup)
 
-Overture, Resolve Exchange, sh4pe, DAP Racing, Falcon, DAP Standard, Bellwether. Plus Readiness assessment and Embedded Context Architect.
+Overture, Resolve Exchange, sh4pe, DAP Standard. Plus Readiness assessment and Embedded Context Architect.
 
-Status labels still marked CONFIRM where the founder has not signed off.
+Live and not on the public mention list: DAP Racing (physical AI entrant), Falcon, Living Policy Architecture, Bellwether (Try + Home proof), Gate Zero, Sounding, Helm, and more.
+
+Do not print CONFIRM on any public surface.
 
 ## Design
 
 Graphite paper `#15171a`. Cream ink `#ece8df`. Vermilion `#d8412f`. Archivo / Hanken Grotesk / JetBrains Mono. No left rail. No numbered sheets.
-
-## Do next
-
-1. Open the live site in this chat preview. Click every nav item. Click Overture. Click a paper.
-2. Tighten type and empty space if the founder still finds it wordy.
-3. Do not invent facts, clients, or numbers.
-4. Do not restyle to a second palette.
-5. Copy deck at `/deck` is the CURRENT / NEW / WHY record. Keep it consistent with the live site.
