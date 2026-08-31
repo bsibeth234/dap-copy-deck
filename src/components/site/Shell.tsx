@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 const NAV = [
   { l: "Products", to: "/#products" },
@@ -24,31 +24,21 @@ function Mark({ className }: { className?: string }) {
 
 export function HeroFilm({ src }: { src: string }) {
   const ref = useRef<HTMLVideoElement>(null);
-  const [on, setOn] = useState(true);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setOn(false);
-      ref.current?.pause();
-    }
-  }, []);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (on) void el.play().catch(() => setOn(false));
-    else el.pause();
-  }, [on]);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.pause();
+      return;
+    }
+    void el.play().catch(() => {});
+  }, []);
 
   return (
-    <>
-      <div className="hero-film" aria-hidden="true">
-        <video ref={ref} src={src} muted loop playsInline preload="metadata" />
-      </div>
-      <button type="button" className="film-pause" onClick={() => setOn((v) => !v)}>
-        {on ? "Pause" : "Play"}
-      </button>
-    </>
+    <div className="hero-film" aria-hidden="true">
+      <video ref={ref} src={src} muted loop playsInline preload="metadata" autoPlay />
+    </div>
   );
 }
 

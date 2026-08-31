@@ -165,22 +165,6 @@
     inset: 0;
     background: linear-gradient(transparent 30%, var(--color-paper) 92%);
   }
-  .film-pause {
-    pointer-events: auto;
-    z-index: 3;
-    position: absolute;
-    top: 0.85rem;
-    right: 1rem;
-    min-height: 2rem;
-    padding: 0 0.6rem;
-    font-size: 0.62rem;
-    font-family: var(--font-mono);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-ink-soft);
-    background: #15171acc;
-    border: 1px solid var(--color-rule);
-  }
   .hero .copy,
   .chapter .copy {
     position: relative;
@@ -434,6 +418,69 @@
     font-size: 0.58rem;
     min-width: 4.5rem;
     padding-top: 0.2rem;
+  }
+
+  .acc {
+    max-width: 36rem;
+  }
+  .acc-item {
+    border-top: 1px solid var(--color-rule);
+  }
+  .acc-item:last-child {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .acc-h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: inherit;
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    padding: 0.9rem 0;
+    min-height: 2.75rem;
+  }
+  .acc-mark {
+    flex-shrink: 0;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-right: 1px solid var(--color-ink-soft);
+    border-bottom: 1px solid var(--color-ink-soft);
+    transform: rotate(45deg);
+    transition: transform 180ms ease-out;
+  }
+  .acc-h[aria-expanded="true"] .acc-mark {
+    transform: rotate(225deg);
+  }
+  .acc-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 180ms ease-out;
+  }
+  .acc-body.open {
+    grid-template-rows: 1fr;
+  }
+  .acc-inner {
+    overflow: hidden;
+    min-height: 0;
+    color: var(--color-ink-soft);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-wrap: pretty;
+    padding-bottom: 0;
+  }
+  .acc-body.open .acc-inner {
+    padding-bottom: 1.1rem;
+  }
+
+  .letter {
+    max-width: 36rem;
+    padding: 2rem 1.25rem 3.5rem;
   }
 
   .demo-panel {

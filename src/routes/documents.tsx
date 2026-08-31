@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Shell } from "@/components/site/Shell";
+import { Accordion } from "@/components/site/Accordion";
 
 export const Route = createFileRoute("/documents")({
   head: () => ({
@@ -14,74 +14,86 @@ export const Route = createFileRoute("/documents")({
 
 const ROWS = [
   {
-    k: "Aug 2026",
-    t: "Models are commodities.",
-    p: "Which rule governed the last decision, and can you prove it?",
-    href: "https://dap.solutions/documents/models-are-commodities.pdf",
+    id: "models",
+    title: "Models are commodities.",
+    body: (
+      <>
+        Which rule governed the last decision, and can you prove it?{" "}
+        <a className="quiet" href="https://dap.solutions/documents/models-are-commodities.pdf" target="_blank" rel="noreferrer">
+          Open
+        </a>
+      </>
+    ),
   },
   {
-    k: "Thesis",
-    t: "Discovery is the bottleneck",
-    p: "The scarce skill is knowing which questions to ask.",
-    href: "https://dap.solutions/documents/discovery-is-the-bottleneck",
+    id: "discovery",
+    title: "Discovery is the bottleneck",
+    body: (
+      <>
+        The scarce skill is knowing which questions to ask.{" "}
+        <a className="quiet" href="https://dap.solutions/documents/discovery-is-the-bottleneck" target="_blank" rel="noreferrer">
+          Open
+        </a>
+      </>
+    ),
   },
   {
-    k: "v1.1",
-    t: "Living Policy Architecture",
-    p: "Written policy compiled into checks that run.",
-    href: "https://dap.solutions/documents/living-policy-architecture",
+    id: "lpa",
+    title: "Living Policy Architecture",
+    body: (
+      <>
+        Written policy compiled into checks that run.{" "}
+        <a className="quiet" href="https://dap.solutions/documents/living-policy-architecture" target="_blank" rel="noreferrer">
+          Open
+        </a>
+      </>
+    ),
   },
   {
-    k: "SSRN",
-    t: "Policy-coupled decision attestation",
-    p: "Sealed records anyone can reproduce.",
-    href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7108538",
+    id: "ssrn",
+    title: "Policy-coupled decision attestation",
+    body: (
+      <>
+        Sealed records anyone can reproduce.{" "}
+        <a className="quiet" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7108538" target="_blank" rel="noreferrer">
+          Open
+        </a>
+      </>
+    ),
   },
   {
-    k: "Open",
-    t: "AA-1",
-    p: "Which controls a firm runs, at what level.",
-    href: "https://dap.solutions/aa-1",
+    id: "aa1",
+    title: "AA-1",
+    body: (
+      <>
+        Which controls a firm runs, at what level.{" "}
+        <a className="quiet" href="https://dap.solutions/aa-1" target="_blank" rel="noreferrer">
+          Open
+        </a>
+      </>
+    ),
   },
   {
-    k: "Live",
-    t: "Bellwether",
-    p: "Regulatory change. No account.",
-    href: "https://bellwether.dap.solutions",
+    id: "bellwether",
+    title: "Bellwether",
+    body: (
+      <>
+        Regulatory change. No account.{" "}
+        <a className="quiet" href="https://bellwether.dap.solutions" target="_blank" rel="noreferrer">
+          Open
+        </a>
+      </>
+    ),
   },
 ];
 
 function Page() {
-  const [open, setOpen] = useState<string | null>(null);
   return (
     <Shell>
       <div className="papers">
         <p className="kicker">Papers</p>
-        <h1 className="mt-2 font-display text-xl font-semibold">The argument, in writing.</h1>
-        {ROWS.map((r) => {
-          const on = open === r.t;
-          return (
-            <div key={r.t}>
-              <button
-                type="button"
-                className="row"
-                aria-expanded={on}
-                onClick={() => setOpen(on ? null : r.t)}
-              >
-                <span className="meta">{r.k}</span>
-                <b>{r.t}</b>
-              </button>
-              {on ? (
-                <p className="open-body">
-                  {r.p}{" "}
-                  <a className="quiet" href={r.href} target="_blank" rel="noreferrer">
-                    Open
-                  </a>
-                </p>
-              ) : null}
-            </div>
-          );
-        })}
+        <h1 className="mt-2 mb-4 font-display text-xl font-semibold">The argument, in writing.</h1>
+        <Accordion items={ROWS} />
       </div>
     </Shell>
   );
