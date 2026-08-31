@@ -15,12 +15,12 @@ export const Route = createFileRoute("/documents")({
 const ROWS = [
   {
     id: "models",
-    title: "Models are commodities.",
+    title: "Models are commodities",
     body: (
       <>
         Which rule governed the last decision, and can you prove it?{" "}
-        <a className="quiet" href="https://dap.solutions/documents/models-are-commodities.pdf" target="_blank" rel="noreferrer">
-          Open
+        <a className="quiet" href="https://dap.solutions/documents/models-are-commodities.pdf" target="_blank" rel="noreferrer noopener">
+          Open, new tab
         </a>
       </>
     ),
@@ -31,8 +31,8 @@ const ROWS = [
     body: (
       <>
         The scarce skill is knowing which questions to ask.{" "}
-        <a className="quiet" href="https://dap.solutions/documents/discovery-is-the-bottleneck" target="_blank" rel="noreferrer">
-          Open
+        <a className="quiet" href="https://dap.solutions/documents/discovery-is-the-bottleneck" target="_blank" rel="noreferrer noopener">
+          Open, new tab
         </a>
       </>
     ),
@@ -43,8 +43,8 @@ const ROWS = [
     body: (
       <>
         Written policy compiled into checks that run.{" "}
-        <a className="quiet" href="https://dap.solutions/documents/living-policy-architecture" target="_blank" rel="noreferrer">
-          Open
+        <a className="quiet" href="https://dap.solutions/documents/living-policy-architecture" target="_blank" rel="noreferrer noopener">
+          Open, new tab
         </a>
       </>
     ),
@@ -55,8 +55,8 @@ const ROWS = [
     body: (
       <>
         Sealed records anyone can reproduce.{" "}
-        <a className="quiet" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7108538" target="_blank" rel="noreferrer">
-          Open
+        <a className="quiet" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7108538" target="_blank" rel="noreferrer noopener">
+          Open, new tab
         </a>
       </>
     ),
@@ -67,20 +67,8 @@ const ROWS = [
     body: (
       <>
         Which controls a firm runs, at what level.{" "}
-        <a className="quiet" href="https://dap.solutions/aa-1" target="_blank" rel="noreferrer">
-          Open
-        </a>
-      </>
-    ),
-  },
-  {
-    id: "bellwether",
-    title: "Bellwether",
-    body: (
-      <>
-        Regulatory change. No account.{" "}
-        <a className="quiet" href="https://bellwether.dap.solutions" target="_blank" rel="noreferrer">
-          Open
+        <a className="quiet" href="https://dap.solutions/aa-1" target="_blank" rel="noreferrer noopener">
+          Open, new tab
         </a>
       </>
     ),

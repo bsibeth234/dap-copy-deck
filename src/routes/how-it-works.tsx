@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { Shell, HeroFilm, CTA } from "@/components/site/Shell";
-import { GateViz } from "@/components/site/viz";
+import { CompilerViz, GateViz } from "@/components/site/viz";
 import { CompilerDemo } from "@/components/site/CompilerDemo";
 
 export const Route = createFileRoute("/how-it-works")({
@@ -9,7 +9,7 @@ export const Route = createFileRoute("/how-it-works")({
       { title: "How it works · DAP" },
       {
         name: "description",
-        content: "Your written rules become the check that runs before a trade ships.",
+        content: "How your firm decides, compiled into checks that run. Models propose. Humans ratify.",
       },
     ],
   }),
@@ -23,22 +23,21 @@ function Page() {
         <HeroFilm src="/film/board.mp4" />
         <div className="copy">
           <p className="kicker">Context layer</p>
-          <h1>How you decide</h1>
-          <p className="line">How your firm decides, used before trades ship.</p>
+          <h1>How your firm decides</h1>
         </div>
       </section>
 
-      <section className="chapter">
-        <HeroFilm src="/film/gate.mp4" />
+      <section className="chapter type-only">
+        <div className="viz-wrap">
+          <CompilerViz />
+        </div>
         <div className="copy">
           <p className="kicker">Compile</p>
           <h2>Clause becomes check</h2>
-          <p className="line">Each written clause becomes a check that runs.</p>
         </div>
       </section>
 
-      <section className="chapter">
-        <HeroFilm src="/film/compiler.mp4" />
+      <section className="chapter type-only">
         <div className="viz-wrap">
           <GateViz />
         </div>
@@ -51,12 +50,20 @@ function Page() {
 
       <CompilerDemo />
 
-      <section className="chapter">
+      <section className="chapter type-only">
         <div className="copy">
           <p className="kicker">Attestation</p>
           <h2>Signed decision record</h2>
           <p className="line">A signed record that anyone can check offline.</p>
           <p className="line">Models propose. Humans ratify.</p>
+        </div>
+      </section>
+
+      <section className="chapter type-only limits">
+        <div className="copy">
+          <p className="kicker">Limitations</p>
+          <h2>What we will not attest</h2>
+          <p className="line">Only deterministic evaluation over ratified inputs may be attested.</p>
           <div className="links">
             <a href={CTA}>Build Your Context Layer</a>
             <Link to="/">Products</Link>
