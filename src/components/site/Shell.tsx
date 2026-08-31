@@ -78,7 +78,6 @@ export function Shell({ children }: { children: ReactNode }) {
       <footer className="foot">
         <span>Dartmouth Advisory Partners · Toronto</span>
         <span>Policy compiles. Governance executes. Context compounds.</span>
-        <Link to="/deck">Copy deck</Link>
       </footer>
     </div>
   );
