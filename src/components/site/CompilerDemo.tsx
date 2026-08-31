@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 
 const HOLDINGS = ["Listed equity", "Corporate bond", "Private fund interest"] as const;
 const WEIGHTS = ["3.2%", "4.0%", "5.5%"] as const;
@@ -13,7 +13,6 @@ export function CompilerDemo() {
   const [weight, setWeight] = useState<(typeof WEIGHTS)[number]>("3.2%");
   const [proposed, setProposed] = useState(false);
   const [record, setRecord] = useState<string | null>(null);
-  const hold = useRef<number | null>(null);
 
   const pass = toNum(weight) <= LIMIT;
   const payload = useMemo(
@@ -41,9 +40,20 @@ export function CompilerDemo() {
 
       <div className="cd-row">
         <span className="k">Holding</span>
-        <div className="seg">
+        <div className="seg" role="radiogroup" aria-label="Holding">
           {HOLDINGS.map((h) => (
-            <button key={h} type="button" className={holding === h ? "on" : ""} onClick={() => { setHolding(h); setProposed(false); setRecord(null); }}>
+            <button
+              key={h}
+              type="button"
+              role="radio"
+              aria-checked={holding === h}
+              className={holding === h ? "on" : ""}
+              onClick={() => {
+                setHolding(h);
+                setProposed(false);
+                setRecord(null);
+              }}
+            >
               {h}
             </button>
           ))}
@@ -53,9 +63,20 @@ export function CompilerDemo() {
         <span className="k">Proposed</span>
         <div>
           <p className="mb-2 text-sm text-ink-soft">Raise single-issuer weight</p>
-          <div className="seg">
+          <div className="seg" role="radiogroup" aria-label="Proposed weight">
             {WEIGHTS.map((w) => (
-              <button key={w} type="button" className={weight === w ? "on" : ""} onClick={() => { setWeight(w); setProposed(false); setRecord(null); }}>
+              <button
+                key={w}
+                type="button"
+                role="radio"
+                aria-checked={weight === w}
+                className={weight === w ? "on" : ""}
+                onClick={() => {
+                  setWeight(w);
+                  setProposed(false);
+                  setRecord(null);
+                }}
+              >
                 to {w}
               </button>
             ))}
@@ -68,23 +89,18 @@ export function CompilerDemo() {
       </div>
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <button type="button" className="btn-ghost" onClick={() => { setProposed(true); setRecord(null); }}>
-          Propose
-        </button>
         <button
           type="button"
-          className="btn-primary"
-          onMouseDown={() => {
-            hold.current = window.setTimeout(() => { void approve(); }, 650);
+          className="btn-ghost"
+          onClick={() => {
+            setProposed(true);
+            setRecord(null);
           }}
-          onMouseUp={() => { if (hold.current) window.clearTimeout(hold.current); }}
-          onMouseLeave={() => { if (hold.current) window.clearTimeout(hold.current); }}
-          onTouchStart={() => {
-            hold.current = window.setTimeout(() => { void approve(); }, 650);
-          }}
-          onTouchEnd={() => { if (hold.current) window.clearTimeout(hold.current); }}
         >
-          Approve, press and hold
+          Propose
+        </button>
+        <button type="button" className="btn-primary" disabled={!proposed} onClick={() => void approve()}>
+          Approve
         </button>
         <button
           type="button"
@@ -104,11 +120,13 @@ export function CompilerDemo() {
       </div>
 
       <p className="mt-4 text-sm text-ink-soft">
-        {!proposed ? "Nothing has been proposed yet." : pass ? "Proposed. Within the gate." : "Proposed. This would halt. The halt names IPS §4.1 v3."}
+        {!proposed
+          ? "Nothing has been proposed yet."
+          : pass
+            ? "Proposed. Within the gate."
+            : "Proposed. This would halt. The halt names IPS §4.1 v3."}
       </p>
-      <div className="record">
-        {record ? record : "No record yet. Propose, then approve."}
-      </div>
+      <div className="record">{record ? record : "No record yet. Propose, then approve."}</div>
       <p className="mt-3 text-xs text-muted">Demonstration. Produced by this page. Not an institutional record.</p>
     </div>
   );

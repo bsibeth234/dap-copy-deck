@@ -21,7 +21,7 @@ export const positioning = [
   },
   {
     k: "Proof",
-    s: "Bellwether is live and public. AA-1, Living Policy Architecture, Discovery is the bottleneck, and DAP Standard 2026.2 are published. Three referenceable client slots: CONFIRM, CONFIRM, CONFIRM.",
+    s: "Bellwether is live and public. AA-1, Living Policy Architecture, Discovery is the bottleneck, and DAP Standard 2026.2 are published.",
   },
   {
     k: "Next step",
